@@ -3,10 +3,10 @@ cd $1
 # Cloning if needed
 ################################################################################
 #echo "Cloning the frontend..."
-chmod -R 777 portal_frontend/
-rm -R portal_frontend/
+chmod -R 777 public/
+rm -R public/
 git clone https://github.com/Puzzlout/PortalFront.git
-mv PortalFront portal_frontend
+mv PortalFront public
 
 ################################################################################
 # First install script of API
@@ -15,7 +15,7 @@ mv PortalFront portal_frontend
 # Input $2: dev or prod
 #
 ################################################################################
-cd portal_frontend/
+cd public/
 git pull
 #last_release=$(git describe --tags)
 #git checkout tags/$last_release -b v$last_release
