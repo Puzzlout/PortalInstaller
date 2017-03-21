@@ -16,12 +16,13 @@ mv PortalFront public
 #
 ################################################################################
 cd public/
+cp ../../../composer.phar composer.phar
 git pull
 #last_release=$(git describe --tags)
 #git checkout tags/$last_release -b v$last_release
 echo "Run composer..."
-composer install
-composer update
+php composer.phar install
+php composer.phar update
 echo "IMPORTANT: Require a mysql root user with no password"
 php bin/console doctrine:database:create --if-not-exists
 php bin/console doctrine:schema:update --force
